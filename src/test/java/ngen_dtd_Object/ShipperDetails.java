@@ -47,7 +47,7 @@ public class ShipperDetails
 	@FindBy(xpath = "//div[@id='Text_ShipperCityCodeSNo-list']//li[@class='k-item']")
 	WebElement CityList;
 	
-	@FindBy(xpath = "//div[@id='Text_ShipperZipCodeSNo-list']//ul[@class='k-list k-reset']")
+	@FindBy(css = "div[id='Text_ShipperZipCodeSNo-list'] li:nth-child(1)")
 	WebElement ZipcodeList;
 	
 	
@@ -82,11 +82,16 @@ public class ShipperDetails
 		button.click();
 	}
 	
-	public void select_Zipcode(String args1)
+	public void select_Zipcode1(String args1)
 	{
-		ZipCodeErrow.click();
-		List<WebElement> listItems = ZipcodeList.findElements(By.tagName("li"));
-		for (WebElement option : listItems) {
+		 // Initialize WebDriverWait with a timeout of 10 seconds
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+	    // Click to open the Zipcode dropdown
+	    wait.until(ExpectedConditions.elementToBeClickable(ZipCodeErrow)).click();
+	    
+	    List<WebElement> listItems = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@id='Text_ShipperZipCodeSNo-list']//ul[@class='k-list k-reset']//li")));		
+	      for (WebElement option : listItems) {
             if (option.getText().equals(args1)) {
                 option.click();
                 break;
@@ -97,12 +102,32 @@ public class ShipperDetails
 	
 	public void enter_Address1(String args1)
 	{
-		Address1.sendKeys(args1);
+		// Initialize WebDriverWait with a timeout of 10 seconds
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    
+	    // Wait for the MobileNo element to be visible and clickable
+	    WebElement mobileNoField = wait.until(ExpectedConditions.elementToBeClickable(Address1));
+	    
+	    // Clear any pre-existing text in the field (optional, based on your use case)
+	    mobileNoField.clear();
+
+	    // Enter the mobile number into the field
+	    mobileNoField.sendKeys(args1);
 	}
 	
 	public void enter_MobileNo(String args1)
 	{
-		MobileNo.sendKeys(args1);
+		// Initialize WebDriverWait with a timeout of 10 seconds
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    
+	    // Wait for the MobileNo element to be visible and clickable
+	    WebElement mobileNoField = wait.until(ExpectedConditions.elementToBeClickable(MobileNo));
+	    
+	    // Clear any pre-existing text in the field (optional, based on your use case)
+	    mobileNoField.clear();
+
+	    // Enter the mobile number into the field
+	    mobileNoField.sendKeys(args1);
 	}
 	
 	public void enter_SaveButton()

@@ -62,7 +62,7 @@ WebDriver driver;
 		ObjShipperDetails.enterName("Manish Arya");
 		ObjShipperDetails.select_Country();
 		ObjShipperDetails.select_City();
-		ObjShipperDetails.select_Zipcode("00102");
+		ObjShipperDetails.select_Zipcode1("00102");
 		ObjShipperDetails.enter_Address1("DownTown Helinski");
 		ObjShipperDetails.enter_MobileNo("8871009273");
 		ObjShipperDetails.enter_SaveButton();
@@ -73,11 +73,11 @@ WebDriver driver;
 		ObjConsigneeDetails = new ConsigneeDetails(driver);
 		ObjConsigneeDetails.click_AddConsigneeDetails();
 		ObjConsigneeDetails.enterName("Sarvagya Jain");
-		ObjConsigneeDetails.selectDestinationCountry("Finland");
-		ObjConsigneeDetails.selectDestinationCity("Helinski");
-		ObjConsigneeDetails.selectDestinationZipCode("00105");
-		ObjConsigneeDetails.enterAddress1("DownTown Helinski");
-		ObjConsigneeDetails.enterAddress1("8871009273");
+		ObjConsigneeDetails.selectDestinationCountry("ET-ETHIOPIA");
+		ObjConsigneeDetails.selectDestinationCity("ADDIS ABABA [ADD]");
+		ObjConsigneeDetails.selectDestinationZipCode("1000");
+		ObjConsigneeDetails.enterAddress1("DownTown Addis");
+		ObjConsigneeDetails.enterMobileNo("8871009272");
 		ObjConsigneeDetails.enterSaveButton();
 		
 	}

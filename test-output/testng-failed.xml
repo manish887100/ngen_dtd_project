@@ -7,7 +7,6 @@
         <methods>
           <include name="enter_ConsigneeDetails"/>
           <include name="beforetest"/>
-          <include name="enter_ShipperDetails"/>
         </methods>
       </class> <!-- ngen_dtd_Test_Method.Ngen_Dtd_Setup -->
     </classes>

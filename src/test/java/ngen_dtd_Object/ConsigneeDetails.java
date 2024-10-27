@@ -22,25 +22,25 @@ public class ConsigneeDetails {
 	@FindBy(xpath = "//input[@id='txtConsigneeName']")
 	WebElement Name;
 	
-	@FindBy(xpath = "//body[1]/div[49]/div[2]/div[3]/table[1]/tbody[1]/tr[2]/td[4]/span[1]/span[1]/span[1]/span[1]")
+	@FindBy(css = "body > div:nth-child(51) > div:nth-child(2) > div:nth-child(4) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(4) > span:nth-child(2) > span:nth-child(1) > span:nth-child(2) > span:nth-child(1)")
 	WebElement DestinationCountryErrow;
 	
-	@FindBy(xpath = "//body[1]/div[49]/div[2]/div[3]/table[1]/tbody[1]/tr[3]/td[2]/span[1]/span[1]/span[1]/span[1]")
+	@FindBy(css = "body > div:nth-child(51) > div:nth-child(2) > div:nth-child(4) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2) > span:nth-child(2) > span:nth-child(1) > span:nth-child(2) > span:nth-child(1)")
 	WebElement DestinationCityErrow;
 	
-	@FindBy(xpath = "//body[1]/div[49]/div[2]/div[3]/table[1]/tbody[1]/tr[3]/td[4]/span[1]/span[1]/span[1]/span[1]")
+	@FindBy(css = "body > div:nth-child(51) > div:nth-child(2) > div:nth-child(4) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(4) > span:nth-child(2) > span:nth-child(1) > span:nth-child(2) > span:nth-child(1)")
 	WebElement ZipCodeErrow;
 	
-	@FindBy(xpath = "//input[@id='txtConsigneeAddress1']")
+	@FindBy(css = "#txtConsigneeAddress1")
 	WebElement Address1;
 	
-	@FindBy(xpath = "//input[@id='ConsigneeMobileNo']")
+	@FindBy(css = "#ConsigneeMobileNo")
 	WebElement MobileNo;
 	
 	@FindBy(xpath = "//input[@name='consignee']")
 	WebElement SaveButton;
 	
-	@FindBy(xpath = "//div[@id='Text_ConsigneeCountrySNo-list']//ul[@class='k-list k-reset']")
+	@FindBy(xpath = "//div[@id='Text_ConsigneeCountrySNo-list']//ul[@class='k-list k-reset']//li")
 	WebElement CountryList;
 	
 	@FindBy(xpath = "//div[@id='Text_DestinationSNo-list']")
@@ -68,56 +68,92 @@ public class ConsigneeDetails {
 	
 	public void selectDestinationCountry(String args1)
 	{
-	
-		WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated((By) DestinationCountryErrow));
-		element.click();
-//		List<WebElement> listItems = CountryList.findElements(By.tagName("li"));
-//		for (WebElement option : listItems) {
-//            if (option.getText().equals(args1)) {
-//                option.click();
-//                break;
-//            }
-//	}
-	
+		// Initialize WebDriverWait with a timeout of 10 seconds
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+	    // Click to open the Zipcode dropdown
+	    wait.until(ExpectedConditions.elementToBeClickable(DestinationCountryErrow)).click();
+    
+	    List<WebElement> listItems = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@id='Text_ConsigneeCountrySNo-list']//ul[@class='k-list k-reset']//li")));		
+	      for (WebElement option : listItems) {                                                             
+          if (option.getText().equals(args1)) {
+              option.click();
+              break;
+          }
+      }
    }
 	
 	public void selectDestinationCity(String args1)
 	{
-		WebElement button = wait.until(ExpectedConditions.elementToBeClickable(DestinationCityErrow));
-		button.click();
-        List<WebElement> listItems = CityList.findElements(By.tagName("li"));
-		for (WebElement option : listItems) {
-            if (option.getText().equals(args1)) {
-                option.click();
-                break;
-            }
-	}		
+		// Initialize WebDriverWait with a timeout of 10 seconds
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+	    // Click to open the Zipcode dropdown
+	    wait.until(ExpectedConditions.elementToBeClickable(DestinationCityErrow)).click();
+    
+	    List<WebElement> listItems = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@id='Text_DestinationSNo-list']")));		
+	      for (WebElement option : listItems) {                                                             
+          if (option.getText().equals(args1)) {
+              option.click();
+              break;
+          }
+      }		
 	}
 	
 	public void selectDestinationZipCode(String args1)
 	{
-		ZipCodeErrow.click();
-        List<WebElement> listItems = ZipCodeList.findElements(By.tagName("li"));
-		for (WebElement option : listItems) {
+		 // Initialize WebDriverWait with a timeout of 10 seconds
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+	    // Click to open the Zipcode dropdown
+	    wait.until(ExpectedConditions.elementToBeClickable(ZipCodeErrow)).click();
+	    
+	    List<WebElement> listItems = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@id='Text_ConsigneeZipCodeSNo-list']//ul[@class='k-list k-reset']//li")));		
+	      for (WebElement option : listItems) {
             if (option.getText().equals(args1)) {
                 option.click();
                 break;
             }
-	}		
+        }
+		
 	}
 	
-	public void enterAddress1(String args1)
+	public void enterAddress1(String args1) 
 	{
-		Address1.sendKeys(args1);	
+	    // Initialize WebDriverWait with a timeout of 10 seconds
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    
+	    // Wait for the Address1 element to be visible and clickable
+	    WebElement addressField = wait.until(ExpectedConditions.elementToBeClickable(Address1));
+	    
+	    // Clear any pre-existing text in the field (optional, based on your use case)
+	    addressField.clear();
+
+	    // Enter the address into the field
+	    addressField.sendKeys(args1);
 	}
 	
-	public void enterMobileNo(String args1)
+	public void enterMobileNo(String args1) 
 	{
-		MobileNo.sendKeys(args1);
+	    // Initialize WebDriverWait with a timeout of 10 seconds
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    
+	    // Wait for the MobileNo element to be visible and clickable
+	    WebElement mobileNoField = wait.until(ExpectedConditions.elementToBeClickable(MobileNo));
+	    
+	    // Clear any pre-existing text in the field (optional, based on your use case)
+	    mobileNoField.clear();
+
+	    // Enter the mobile number into the field
+	    mobileNoField.sendKeys(args1);
 	}
-	
-	public void enterSaveButton()
+
+	public void enterSaveButton() 
 	{
+		
 		SaveButton.click();
-	}	
+		
+	}
+	
+	
 }
