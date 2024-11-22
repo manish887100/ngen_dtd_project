@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\manish.arya\AppData\Local\Temp\testng-eclipse-588691138\testng-customsuite.xml</span>
+                    <span>C:\Users\manish.arya\AppData\Local\Temp\testng-eclipse-1349628873\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">6 methods,   6 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,6 +104,16 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="ngen_dtd_Test_Method.Ngen_Dtd_Setup" class="method navigator-link" hash-for-method="B2B_Booking_Page">B2B_Booking_Page</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="ngen_dtd_Test_Method.Ngen_Dtd_Setup" class="method navigator-link" hash-for-method="Enter_Shipment_Information">Enter_Shipment_Information</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="ngen_dtd_Test_Method.Ngen_Dtd_Setup" class="method navigator-link" hash-for-method="Select_Additional_Services">Select_Additional_Services</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -148,6 +158,20 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+                  <a name="Enter_Shipment_Information">
+                  </a> <!-- Enter_Shipment_Information -->
+                  <span class="method-name">Enter_Shipment_Information</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Select_Additional_Services">
+                  </a> <!-- Select_Additional_Services -->
+                  <span class="method-name">Select_Additional_Services</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="enter_ConsigneeDetails">
                   </a> <!-- enter_ConsigneeDetails -->
                   <span class="method-name">enter_ConsigneeDetails</span>
@@ -172,7 +196,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\manish.arya\AppData\Local\Temp\testng-eclipse-588691138\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\manish.arya\AppData\Local\Temp\testng-eclipse-1349628873\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -221,28 +245,36 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(6);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'enter_ConsigneeDetails')
+data.setCell(0, 1, 'Enter_Shipment_Information')
 data.setCell(0, 2, 'ngen_dtd_Test_Method.Ngen_Dtd_Setup')
-data.setCell(0, 3, 6103);
+data.setCell(0, 3, 7410);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'enter_ShipperDetails')
+data.setCell(1, 1, 'B2B_Booking_Page')
 data.setCell(1, 2, 'ngen_dtd_Test_Method.Ngen_Dtd_Setup')
-data.setCell(1, 3, 4550);
+data.setCell(1, 3, 6485);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'B2B_Booking_Page')
+data.setCell(2, 1, 'enter_ConsigneeDetails')
 data.setCell(2, 2, 'ngen_dtd_Test_Method.Ngen_Dtd_Setup')
-data.setCell(2, 3, 4270);
+data.setCell(2, 3, 5592);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'enter_userDetails')
+data.setCell(3, 1, 'enter_ShipperDetails')
 data.setCell(3, 2, 'ngen_dtd_Test_Method.Ngen_Dtd_Setup')
-data.setCell(3, 3, 3745);
+data.setCell(3, 3, 3746);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'Select_Additional_Services')
+data.setCell(4, 2, 'ngen_dtd_Test_Method.Ngen_Dtd_Setup')
+data.setCell(4, 3, 2937);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'enter_userDetails')
+data.setCell(5, 2, 'ngen_dtd_Test_Method.Ngen_Dtd_Setup')
+data.setCell(5, 3, 2824);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 18 seconds</span>
+              <span class="suite-total-time">Total running time: 28 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -275,19 +307,27 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">enter_userDetails</span>
-                <span class="method-start">6764 ms</span>
+                <span class="method-start">19946 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">B2B_Booking_Page</span>
-                <span class="method-start">10535 ms</span>
+                <span class="method-start">22781 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">enter_ShipperDetails</span>
-                <span class="method-start">14813 ms</span>
+                <span class="method-start">29275 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">enter_ConsigneeDetails</span>
-                <span class="method-start">19369 ms</span>
+                <span class="method-start">33025 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Enter_Shipment_Information</span>
+                <span class="method-start">38620 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Select_Additional_Services</span>
+                <span class="method-start">46034 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

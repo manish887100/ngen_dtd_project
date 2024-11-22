@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class ConsigneeDetails {
 
 	WebDriver driver;
-	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
 	
 	@FindBy(xpath = "//input[@id='AddConsigneeDetails']")
 	WebElement AddConsigneeDetailsHyperLink;

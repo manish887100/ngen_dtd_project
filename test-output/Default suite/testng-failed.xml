@@ -6,7 +6,9 @@
       <class name="ngen_dtd_Test_Method.Ngen_Dtd_Setup">
         <methods>
           <include name="enter_ConsigneeDetails"/>
+          <include name="Select_Additional_Services"/>
           <include name="beforetest"/>
+          <include name="Enter_Shipment_Information"/>
         </methods>
       </class> <!-- ngen_dtd_Test_Method.Ngen_Dtd_Setup -->
     </classes>
